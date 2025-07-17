@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mensaje de Amor</title>
+  <style>
+    body {
+      background: #ffe6f0;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+    }
+    #heart {
+      font-size: 100px;
+      color: #ff0066;
+      animation: beat 1s infinite;
+      cursor: pointer;
+      user-select: none;
+    }
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+    #message {
+      margin-top: 20px;
+      font-size: 24px;
+      color: #b30047;
+      text-align: center;
+      max-width: 300px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="heart">❤</div>
+  <div id="message">Haz clic en el corazón para recibir un mensaje de amor 💌</div>
+
+  <script>
+    const heart = document.getElementById('heart');
+    const message = document.getElementById('message');
+
+    const loveMessages = [
+      "Federico desde el primer dia que te vi supe que eres el correcto.",
+      "Eres una de las personas que mas amo en esta vida.",
+      "Tu sonrisa ilumina mi mundo entero.",
+      "Amarte es el regalo más hermoso que la vida me dio.",
+      "Juntos somos invencibles, amor mío."
+    ];
+
+    heart.addEventListener('click', () => {
+      const randomIndex = Math.floor(Math.random() * loveMessages.length);
+      message.textContent = loveMessages[randomIndex];
+    });
+  </script>
+
+</body>
+</html>
